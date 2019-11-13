@@ -1,0 +1,10 @@
+.navbar {
+    background: rgba(50,0,55,.5);
+}
+.navbar-expand .navbar-nav {
+    justify-content: space-evenly;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}

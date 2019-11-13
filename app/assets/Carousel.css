@@ -1,0 +1,13 @@
+ .carousel_img {
+    height: 200px;
+    width: 250px;
+}
+.slick-track {
+    left: 13px !important;
+}
+.slick-prev {
+    left: -15px !important;
+}
+.slick-next {
+    right: -15px !important;
+}
