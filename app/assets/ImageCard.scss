@@ -1,0 +1,43 @@
+.imgCard {
+    display: flex;
+    background: whitesmoke;
+    flex: 0 0 30%;
+    padding: 1rem;
+    margin: 0 1rem;
+
+    .cardLeft {
+        padding-right: 1rem;
+
+        img {
+            height: 150px;
+            width: 200px;
+        }
+    }
+
+    .cardRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .imgDesc {
+            padding-top: 1rem;
+            text-align: justify;
+        }
+
+        .moreButton {
+            width: fit-content;
+            border: none;
+            background: none;
+            color: darkorchid;
+            align-self: flex-end;
+
+            svg {
+                margin-top: -1px;
+            }
+        }
+    }
+}
+
+.imgCardsContainer {
+    display: flex;
+}
