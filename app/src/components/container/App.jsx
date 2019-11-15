@@ -8,9 +8,10 @@ import AppNavbar from '../reactComponents/AppNavbar';
 import Gallery from '../presentational/Gallery';
 import Details from '../presentational/Details';
 import HomePage from '../presentational/HomePage';
-import Monasteries from '../presentational/Monasteries';
 import History from '../presentational/History';
 import { Container } from 'react-bootstrap';
+
+import M from '../../Messages/messages'
 
 class App extends React.Component {
     render() {
@@ -23,7 +24,12 @@ class App extends React.Component {
                             <HomePage />
                         </Route>
                         <Route path="/gallery/monasteries" >
-                            <Gallery />
+                            <Gallery
+                                title='Monasteries and Churches'
+                                galleryDescription={M.monasteryDesc}
+                                imgSrc="/app/images/19.jpg"
+                                imgDesc='This is the image short description'
+                            />
                         </Route>
                         <Route path="/gallery/history">
                             <History />

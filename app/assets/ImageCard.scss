@@ -3,14 +3,14 @@
     background: whitesmoke;
     flex: 0 0 30%;
     padding: 1rem;
-    margin: 0 1rem;
+    margin: 1rem;
 
     .cardLeft {
         padding-right: 1rem;
 
         img {
             height: 150px;
-            width: 200px;
+            width: 150px;
         }
     }
 
@@ -28,7 +28,7 @@
             width: fit-content;
             border: none;
             background: none;
-            color: darkorchid;
+            color: rosybrown;
             align-self: flex-end;
 
             svg {
@@ -36,8 +36,4 @@
             }
         }
     }
-}
-
-.imgCardsContainer {
-    display: flex;
 }
