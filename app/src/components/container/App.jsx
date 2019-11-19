@@ -25,7 +25,7 @@ class App extends React.Component {
                             <Route exact path="/">
                                 <HomePage />
                             </Route>
-                            <Route path="/gallery/monasteries" >
+                            <Route path="/gallery/monasteries">
                                 <Gallery
                                     title='Monasteries and Churches'
                                     galleryDescription={M.monasteryDesc}
@@ -46,13 +46,13 @@ class App extends React.Component {
                                     images={getImages('nature')}
                                 />
                             </Route>
-                            {/* <Route path="/gallery/nature" >
+                            <Route path="/details">
                                 <Details
-                                    title='Image Name'
-                                    imgDescription='sfsdfsdfsdfsdfffdfd'
-                                    image='imgSrc'
+                                    imgTitle='IMG Title'
+                                    imgPath='/app/images/nature/Shake.jpg'
+                                    imgDescription={M.deleteThisDesc}
                                 />
-                            </Route> */}
+                            </Route>
                         </Switch>
                     </Container>
                 </div>

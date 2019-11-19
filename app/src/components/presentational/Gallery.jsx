@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom'
 
 import ImgCard from '../reactComponents/ImgCard';
-import M from '../../Messages/messages';
 
 class Gallery extends React.Component {
 
     static propTypes = {
         title: PropTypes.string.isRequired,
         galleryDescription: PropTypes.string.isRequired,
-        images: PropTypes.array.isRequired
+        images: PropTypes.array.isRequired,
+        history: PropTypes.any
     }
 
-    onMoreClick = () => {
-        console.log('AAAAAAAAAAAA');
+    onMoreClick = (img) => {
+        this.props.history.push(`/details/${img.name}`);
+
     }
 
     render() {
@@ -28,10 +30,10 @@ class Gallery extends React.Component {
                 <div className='imgCardsContainer'>
                     {this.props.images.map((img, index) =>
                         <ImgCard
-                            key={img.desc}
+                            key={img.name}
                             imgSrc={img.src}
                             imgShortDesc={img.shortDesc}
-                            onMoreClick={this.onMoreClick} />
+                            onMoreClick={() => this.onMoreClick(img)} />
                     )}
                 </div>
             </div>
@@ -39,4 +41,4 @@ class Gallery extends React.Component {
     }
 }
 
-export default Gallery;
+export default withRouter(Gallery);
