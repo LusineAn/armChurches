@@ -8,37 +8,54 @@ import AppNavbar from '../reactComponents/AppNavbar';
 import Gallery from '../presentational/Gallery';
 import Details from '../presentational/Details';
 import HomePage from '../presentational/HomePage';
-import History from '../presentational/History';
 import { Container } from 'react-bootstrap';
 
+import { getImages } from '../../data';
 import M from '../../Messages/messages'
 
 class App extends React.Component {
+
     render() {
         return (
             <Router>
-                <AppNavbar />
-                <Container className='homeContainer'>
-                    <Switch>
-                        <Route exact path="/">
-                            <HomePage />
-                        </Route>
-                        <Route path="/gallery/monasteries" >
-                            <Gallery
-                                title='Monasteries and Churches'
-                                galleryDescription={M.monasteryDesc}
-                                imgSrc="/app/images/19.jpg"
-                                imgDesc='This is the image short description'
-                            />
-                        </Route>
-                        <Route path="/gallery/history">
-                            <History />
-                        </Route>
-                        <Route path="/gallery/nature">
-                            <div>This is the 4-th page</div>
-                        </Route>
-                    </Switch>
-                </Container>
+                <div className="appContainer">
+                    <AppNavbar />
+                    <Container className='homeContainer'>
+                        <Switch>
+                            <Route exact path="/">
+                                <HomePage />
+                            </Route>
+                            <Route path="/gallery/monasteries" >
+                                <Gallery
+                                    title='Monasteries and Churches'
+                                    galleryDescription={M.monasteryDesc}
+                                    images={getImages('monastery')}
+                                />
+                            </Route>
+                            <Route path="/gallery/history">
+                                <Gallery
+                                    title='History'
+                                    galleryDescription={M.historyDesc}
+                                    images={getImages('history')}
+                                />
+                            </Route>
+                            <Route path="/gallery/nature">
+                                <Gallery
+                                    title='Nature'
+                                    galleryDescription={M.natureDesc}
+                                    images={getImages('nature')}
+                                />
+                            </Route>
+                            {/* <Route path="/gallery/nature" >
+                                <Details
+                                    title='Image Name'
+                                    imgDescription='sfsdfsdfsdfsdfffdfd'
+                                    image='imgSrc'
+                                />
+                            </Route> */}
+                        </Switch>
+                    </Container>
+                </div>
             </Router>
         )
     }

@@ -1,22 +1,24 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+import M from '../../Messages/messages';
 
 class AppNavbar extends React.Component {
 
     render() {
         return (
             <Navbar sticky="top">
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Container>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Container>
                         <Nav className="mr-auto">
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/gallery/monasteries">Monasteries and Churches</Nav.Link>
-                            <Nav.Link as={Link} to="/gallery/history">Historical Structures</Nav.Link>
-                            <Nav.Link  as={Link} to="/gallery/nature">In Nature</Nav.Link>
+                            <Nav.Link as={Link} to="/">{M.nav.home}</Nav.Link>
+                            <Nav.Link as={Link} to="/gallery/monasteries">{M.nav.monasteries}</Nav.Link>
+                            <Nav.Link as={Link} to="/gallery/history">{M.nav.history}</Nav.Link>
+                            <Nav.Link as={Link} to="/gallery/nature">{M.nav.nature}</Nav.Link>
                         </Nav>
-                        </Container>
-                    </Navbar.Collapse>
+                    </Container>
+                </Navbar.Collapse>
             </Navbar>
         )
     }

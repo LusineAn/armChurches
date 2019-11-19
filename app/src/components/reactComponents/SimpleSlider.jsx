@@ -9,7 +9,7 @@ class SimpleSlider extends React.Component {
   constructor() {
     super();
     this.state = {
-      images: []       
+      images: []
     };
     this.imgPath = '/app/images/';
   }
@@ -20,7 +20,7 @@ class SimpleSlider extends React.Component {
       images: req.keys().map(key => key.split('/')[1])
     })
   }
-  
+
   render() {
     let settings = {
       dots: true,
@@ -28,9 +28,7 @@ class SimpleSlider extends React.Component {
       speed: 1000,
       slidesToScroll: 1,
       autoplay: true,
-      slidesToShow: 4,
-      // slidesPerRow: 4,
-      // autoplaySpeed: 4000
+      slidesToShow: 4
     };
     return (
       <Slider {...settings}>
@@ -38,11 +36,11 @@ class SimpleSlider extends React.Component {
           this.state.images.map(imgName => {
             return (
               <div className="carousel_item" key={imgName}>
-              <img
-                className="carousel_img"
-                src={this.imgPath+imgName}
-              />
-            </div>
+                <img
+                  className="carousel_img"
+                  src={this.imgPath + imgName}
+                />
+              </div>
             )
           })
         }

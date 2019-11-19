@@ -9,8 +9,7 @@ class Gallery extends React.Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
         galleryDescription: PropTypes.string.isRequired,
-        imgSrc: PropTypes.string.isRequired,
-        imgDesc: PropTypes.string.isRequired
+        images: PropTypes.array.isRequired
     }
 
     onMoreClick = () => {
@@ -27,15 +26,13 @@ class Gallery extends React.Component {
                     <span>{this.props.galleryDescription}</span>
                 </div>
                 <div className='imgCardsContainer'>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
-                    <ImgCard imgSrc={this.props.imgSrc} imgDesc={this.props.imgDesc} onMoreClick={this.onMoreClick}/>
+                    {this.props.images.map((img, index) =>
+                        <ImgCard
+                            key={img.desc}
+                            imgSrc={img.src}
+                            imgShortDesc={img.shortDesc}
+                            onMoreClick={this.onMoreClick} />
+                    )}
                 </div>
             </div>
         )

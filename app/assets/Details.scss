@@ -1,0 +1,15 @@
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .imgTitle {
+        padding: 2rem 0;
+        font-size: 42px;
+        color: burlywood;
+    }
+    .imgDesc {
+        padding: 1rem 2rem 2rem;
+        text-align: justify;
+    }
+}

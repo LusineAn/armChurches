@@ -10,7 +10,7 @@ class ImgCard extends React.Component {
 
     static propTypes = {
         imgSrc: PropTypes.string.isRequired,
-        imgDesc: PropTypes.string.isRequired,
+        imgShortDesc: PropTypes.string.isRequired,
         onMoreClick: PropTypes.func.isRequired
     }
 
@@ -27,13 +27,14 @@ class ImgCard extends React.Component {
                     <img src={this.props.imgSrc} />
                 </div>
                 <div className='cardRight'>
-                    <div className='imgDesc'>{this.props.imgDesc}</div>
+                    <div className='imgDesc'>{this.props.imgShortDesc}</div>
                     <button className='moreButton' onClick={this.onMoreClick}>
                         <span className='moreText'>{M.more}</span>
                         <Icon
                             path={mdiChevronDoubleRight}
                             size={1}
-                            color='rosybrown' />
+                            color='#900'
+                        />
                     </button>
                 </div>
             </div>
