@@ -15,6 +15,7 @@ class Gallery extends React.Component {
 
     onMoreClick = (img) => {
         this.props.history.push(`/details/${img.name}`);
+        // this.props.goToDetails(img);
     }
 
     render() {
@@ -41,3 +42,7 @@ class Gallery extends React.Component {
 }
 
 export default withRouter(Gallery);
+// export default connect(
+//     null,
+//     { goToDetails }
+//   )(Gallery);

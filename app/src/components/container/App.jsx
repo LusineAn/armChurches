@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../../assets/App.scss';
+import '../../../assets/stylesheets/App.scss';
 
 import AppNavbar from '../reactComponents/AppNavbar';
 import Gallery from '../presentational/Gallery';
@@ -11,7 +11,7 @@ import HomePage from '../presentational/HomePage';
 import { Container } from 'react-bootstrap';
 
 import { getImages } from '../../data';
-import M from '../../Messages/messages'
+import M from '../../messages/messages'
 
 class App extends React.Component {
 
@@ -46,9 +46,9 @@ class App extends React.Component {
                                     images={getImages('nature')}
                                 />
                             </Route>
-                            <Route path="/details">
-                                <Details />
-                            </Route>
+                            <Route path="/details"
+                                render={(location) => <Details location={location} />}
+                            />
                         </Switch>
                     </Container>
                 </div>

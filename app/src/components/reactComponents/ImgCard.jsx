@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from '@mdi/react'
 import { mdiChevronDoubleRight } from '@mdi/js';
 
-import M from '../../Messages/messages';
+import M from '../../messages/messages';
 
 class ImgCard extends React.Component {
 

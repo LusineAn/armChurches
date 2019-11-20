@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import M from '../../Messages/messages';
+import M from '../../messages/messages';
 
 class AppNavbar extends React.Component {
 

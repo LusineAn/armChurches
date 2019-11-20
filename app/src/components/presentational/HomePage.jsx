@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SimpleSlider from '../reactComponents/SimpleSlider';
-import M from '../../Messages/messages';
+import M from '../../messages/messages';
 
 class HomePage extends React.Component {
     render() {

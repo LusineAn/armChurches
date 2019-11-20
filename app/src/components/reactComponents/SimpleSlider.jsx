@@ -3,7 +3,6 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 class SimpleSlider extends React.Component {
 
   constructor() {
@@ -11,11 +10,11 @@ class SimpleSlider extends React.Component {
     this.state = {
       images: []
     };
-    this.imgPath = '/app/images/';
+    this.imgPath = '/app/assets/images/carousel/';
   }
 
   componentDidMount() {
-    var req = require.context('../../../images', false, /.jpg$/);
+    var req = require.context('../../../assets/images/carousel', false, /.jpg$/);
     this.setState({
       images: req.keys().map(key => key.split('/')[1])
     })

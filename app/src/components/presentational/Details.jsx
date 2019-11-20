@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import M from '../../Messages/messages';
+import M from '../../messages/messages';
 
 class Details extends React.Component {
 
@@ -12,6 +12,7 @@ class Details extends React.Component {
     }
 
     render() {
+        console.log('location: ', this.props.location);
         return (
             <div className="detailsContainer">
                 <div className='imgTitle'>
