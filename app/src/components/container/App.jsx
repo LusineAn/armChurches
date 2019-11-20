@@ -6,7 +6,6 @@ import '../../../assets/stylesheets/App.scss';
 
 import Routes from '../../routes/Routes';
 import AppNavbar from '../reactComponents/AppNavbar';
-import Gallery from '../presentational/Gallery';
 import Details from '../presentational/Details';
 import HomePage from '../presentational/HomePage';
 import { Container } from 'react-bootstrap';

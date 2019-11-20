@@ -12,4 +12,11 @@
         padding: 0 2rem 2rem;
         text-align: justify;
     }
+    .imgContainer {
+        display: flex;
+        justify-content: center;;
+        img {
+            width: 90%;
+        }
+    }
 }

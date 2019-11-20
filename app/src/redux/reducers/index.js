@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import goToDetails from "./goToDetails";
+import setSelectedImg from "./setSelectedImg";
 // import todos from "./todos";
 
-export default combineReducers({ goToDetails });
+export default combineReducers({ setSelectedImg });

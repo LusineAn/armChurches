@@ -16,6 +16,7 @@ class AppNavbar extends React.Component {
                             <Nav.Link as={Link} to="/gallery/monasteries">{M.nav.monasteries}</Nav.Link>
                             <Nav.Link as={Link} to="/gallery/history">{M.nav.history}</Nav.Link>
                             <Nav.Link as={Link} to="/gallery/nature">{M.nav.nature}</Nav.Link>
+                            <Nav.Link as={Link} to="/gallery/favorites">{M.nav.favorite}</Nav.Link>
                         </Nav>
                     </Container>
                 </Navbar.Collapse>

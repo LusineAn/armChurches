@@ -1,13 +1,13 @@
-// import { GO_TO_DETAILS, ADD_TODO, TOGGLE_TODO, SET_FILTER } from "./actionTypes";
+import { SET_SELECTED_IMG } from "./actionTypes";
 
 // let nextTodoId = 0;
 
-// export const goToDetails = content => ({
-//     type: GO_TO_DETAILS,
-//     payload: {
-//         content
-//     }
-// });
+export const setSelectedImg = selectedImg => ({
+    type: SET_SELECTED_IMG,
+    payload: {
+        selectedImg
+    }
+});
 
 // export const addTodo = content => ({
 //   type: ADD_TODO,

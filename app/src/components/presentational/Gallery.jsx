@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom'
+import { connect } from "react-redux";
 
+import { setSelectedImg } from "../../redux/actions";
 import ImgCard from '../reactComponents/ImgCard';
 
 class Gallery extends React.Component {
@@ -14,7 +16,6 @@ class Gallery extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log('aaaaa:', this.props);
         this.state = {
             isRedirect: false,
             selectedImg: null
@@ -22,15 +23,11 @@ class Gallery extends React.Component {
     }
 
     onMoreClick = (img) => {
+        this.props.setSelectedImg(img);
         this.setState({
             isRedirect: true,
             selectedImg: img
-        })
-        // this.props.history.push(`/details/${img.name}`);
-    }
-
-    goToDetails = () => {
-        console.log('HI!!!!!!!');
+        });
     }
 
     render() {
@@ -56,8 +53,7 @@ class Gallery extends React.Component {
     }
 }
 
-export default withRouter(Gallery);
-// export default withRouter(connect(
-//     null,
-//     { goToDetails }
-// )(Gallery));
+export default withRouter(connect(
+    null,
+    { setSelectedImg }
+)(Gallery));

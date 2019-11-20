@@ -3,7 +3,8 @@ let messages = {
         home: 'Home',
         monasteries: 'Monasteries and Churches',
         history: 'Historical Structures',
-        nature: 'In Nature'
+        nature: 'In Nature',
+        favorite: 'Favorites'
     },
     monastery: 'monastery', //in Constants
     history: 'history',
