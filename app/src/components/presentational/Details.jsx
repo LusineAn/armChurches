@@ -12,7 +12,7 @@ class Details extends React.Component {
     }
 
     render() {
-        console.log('location: ', this.props.location);
+        // console.log('location: ', this.props.location);
         return (
             <div className="detailsContainer">
                 <div className='imgTitle'>

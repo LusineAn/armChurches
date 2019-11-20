@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../assets/stylesheets/App.scss';
 
+import Routes from '../../routes/Routes';
 import AppNavbar from '../reactComponents/AppNavbar';
 import Gallery from '../presentational/Gallery';
 import Details from '../presentational/Details';
@@ -25,27 +26,13 @@ class App extends React.Component {
                             <Route exact path="/">
                                 <HomePage />
                             </Route>
-                            <Route path="/gallery/monasteries">
-                                <Gallery
-                                    title='Monasteries and Churches'
-                                    galleryDescription={M.monasteryDesc}
-                                    images={getImages('monastery')}
+                            {Routes.map((route, index) =>
+                                <Route
+                                    key={index}
+                                    path={route.path}
+                                    render={() => <route.component {...route.props} images={getImages(route.props.type)} /> }
                                 />
-                            </Route>
-                            <Route path="/gallery/history">
-                                <Gallery
-                                    title='History'
-                                    galleryDescription={M.historyDesc}
-                                    images={getImages('history')}
-                                />
-                            </Route>
-                            <Route path="/gallery/nature">
-                                <Gallery
-                                    title='Nature'
-                                    galleryDescription={M.natureDesc}
-                                    images={getImages('nature')}
-                                />
-                            </Route>
+                            )}
                             <Route path="/details"
                                 render={(location) => <Details location={location} />}
                             />
