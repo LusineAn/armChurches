@@ -47,11 +47,7 @@ class App extends React.Component {
                                 />
                             </Route>
                             <Route path="/details">
-                                <Details
-                                    imgTitle='IMG Title'
-                                    imgPath='/app/images/nature/Shake.jpg'
-                                    imgDescription={M.deleteThisDesc}
-                                />
+                                <Details />
                             </Route>
                         </Switch>
                     </Container>

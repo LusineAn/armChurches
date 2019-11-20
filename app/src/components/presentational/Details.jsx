@@ -7,7 +7,7 @@ class Details extends React.Component {
 
     static propTypes = {
         imgTitle: PropTypes.string.isRequired,
-        imgDescription: PropTypes.string.isRequired,
+        imgDesc: PropTypes.string.isRequired,
         imgPath: PropTypes.string.isRequired
     }
 
@@ -18,7 +18,7 @@ class Details extends React.Component {
                     <span>{this.props.imgTitle}</span>
                 </div>
                 <div className='imgDesc'>
-                    <span>{this.props.imgDescription}</span>
+                    <span>{this.props.imgDesc}</span>
                 </div>
                 <div className='imgContainer'>
                     <img src={this.props.imgPath} />

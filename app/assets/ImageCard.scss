@@ -4,33 +4,28 @@
     flex: 0 0 30%;
     padding: 1rem;
     margin: 1rem;
-
     .cardLeft {
-        padding-right: 1rem;
-
+        padding-right: 2rem;
         img {
             height: 150px;
             width: 150px;
         }
     }
-
     .cardRight {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        .imgDesc {
+        .imgName {
             padding-top: 1rem;
             text-align: justify;
         }
-
         .moreButton {
             width: fit-content;
             border: none;
             background: none;
             color: #900;
             align-self: flex-end;
-
+            padding-left: 1rem;
             svg {
                 margin-top: -1px;
             }

@@ -15,7 +15,6 @@ class Gallery extends React.Component {
 
     onMoreClick = (img) => {
         this.props.history.push(`/details/${img.name}`);
-
     }
 
     render() {
@@ -28,11 +27,11 @@ class Gallery extends React.Component {
                     <span>{this.props.galleryDescription}</span>
                 </div>
                 <div className='imgCardsContainer'>
-                    {this.props.images.map((img, index) =>
+                    {this.props.images.map(img =>
                         <ImgCard
                             key={img.name}
                             imgSrc={img.src}
-                            imgShortDesc={img.shortDesc}
+                            imgName={img.name}
                             onMoreClick={() => this.onMoreClick(img)} />
                     )}
                 </div>
