@@ -89,6 +89,8 @@ const getImages = (type) => {
             return hitoryImgData;
         case M.nature:
             return natureImgData;
+        case M.favorite:
+            return []; //'favImages';
         default:
             return []
     }

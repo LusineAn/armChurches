@@ -14,4 +14,8 @@
         flex-wrap: wrap;
         padding: 1rem;
     }
+    .imgCardsContainer::after {
+        content: "";
+        flex: 1 1 30%;
+    }
 }
