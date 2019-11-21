@@ -13,6 +13,10 @@ import { getImages } from '../../data';
 
 class App extends React.Component {
 
+    componentDidMount() {
+        //Fetch data from db and save in redux store
+    }
+
     render() {
         return (
             <Router>

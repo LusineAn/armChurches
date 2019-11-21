@@ -28,6 +28,15 @@ let routes = [
             galleryDescription: M.natureDesc,
             type: 'nature'
         }
+    },
+    {
+        path: '/gallery/favorites',
+        component: Gallery,
+        props: {
+            title: 'Favorite',
+            galleryDescription: M.favoritesDesc,
+            type: 'favorite'
+        }
     }
 ];
 

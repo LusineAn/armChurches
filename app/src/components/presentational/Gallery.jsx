@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 
-import { setImg } from "../../redux/actions";
+import { setImg, addFavImg, removeFavImg } from "../../redux/actions";
 import ImgCard from '../reactComponents/ImgCard';
 
 class Gallery extends React.Component {
@@ -21,6 +21,9 @@ class Gallery extends React.Component {
         }
     }
 
+ /**
+  * Functionality when user clicks on image card's more button
+  */
     onMoreClick = (img) => {
         this.props.setImg(img);
         this.setState({
@@ -28,8 +31,23 @@ class Gallery extends React.Component {
         });
     }
 
+/**
+ * Functionality when user add/remove image on/from favorite list
+ */
+    onFavoriteClick = (id) => {
+        const isFav = this.props.favIds.includes(id);
+        return isFav ? this.props.removeFavImg(this.props.favIds.indexOf(id)) : this.props.addFavImg(id);
+    }
+
+/**
+ * Check if image is added on favorite images list or not
+ */
+    isImgFavorite = (id) => {
+        return this.props.favIds.includes(id);
+    }
+
     render() {
-        const selectedImg = this.props.selectedImg;
+        const { selectedImg } = this.props;
 
         return this.state.isRedirect ?
             <Redirect to={`/details/${selectedImg.name}`} /> :
@@ -43,21 +61,29 @@ class Gallery extends React.Component {
                 <div className='imgCardsContainer'>
                     {this.props.images.map(img =>
                         <ImgCard
-                            key={img.name}
+                            key={img.id}
                             imgSrc={img.src}
                             imgName={img.name}
-                            onMoreClick={() => this.onMoreClick(img)} />
+                            isFav={this.isImgFavorite(img.id)}
+                            onMoreClick={() => this.onMoreClick(img)}
+                            onFavoriteClick={() => this.onFavoriteClick(img.id)}
+                        />
                     )}
                 </div>
-            </div>;
+            </div>
     }
 }
 
 const mapStateToProps = state => {
-    return { selectedImg: state.selectedImg };
+    const { selectedImg } = state;
+    const { favIds } = state.favorits;
+    return { 
+        selectedImg,
+        favIds
+    };
 }
 
 export default withRouter(connect(
     mapStateToProps,
-    { setImg }
+    { setImg, addFavImg, removeFavImg }
 )(Gallery));
