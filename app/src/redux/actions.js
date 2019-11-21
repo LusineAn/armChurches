@@ -1,25 +1,13 @@
-import { SET_SELECTED_IMG } from "./actionTypes";
+import { ADD_IMG, SET_IMG } from "./actionTypes";
 
 // let nextTodoId = 0;
 
-export const setSelectedImg = selectedImg => ({
-    type: SET_SELECTED_IMG,
-    payload: {
-        selectedImg
-    }
+export const setImg = img => ({
+    type: SET_IMG,
+    payload: { img }
 });
 
-// export const addTodo = content => ({
-//   type: ADD_TODO,
-//   payload: {
-//     id: ++nextTodoId,
-//     content
-//   }
-// });
-
-// export const toggleTodo = id => ({
-//   type: TOGGLE_TODO,
-//   payload: { id }
-// });
-
-// export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });
+export const addImg = img => ({
+    type: ADD_IMG,
+    payload: { img }
+})

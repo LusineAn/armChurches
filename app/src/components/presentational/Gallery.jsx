@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 
-import { setSelectedImg } from "../../redux/actions";
+import { setImg } from "../../redux/actions";
 import ImgCard from '../reactComponents/ImgCard';
 
 class Gallery extends React.Component {
@@ -17,22 +17,22 @@ class Gallery extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isRedirect: false,
-            selectedImg: null
+            isRedirect: false
         }
     }
 
     onMoreClick = (img) => {
-        this.props.setSelectedImg(img);
+        this.props.setImg(img);
         this.setState({
-            isRedirect: true,
-            selectedImg: img
+            isRedirect: true
         });
     }
 
     render() {
+        const selectedImg = this.props.selectedImg;
+
         return this.state.isRedirect ?
-            <Redirect to={`/details/${this.state.selectedImg.name}`} /> :
+            <Redirect to={`/details/${selectedImg.name}`} /> :
             <div className='galleryContainer'>
                 <div className='galleryTitle'>
                     <span>{this.props.title}</span>
@@ -53,7 +53,11 @@ class Gallery extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return { selectedImg: state.selectedImg };
+}
+
 export default withRouter(connect(
-    null,
-    { setSelectedImg }
+    mapStateToProps,
+    { setImg }
 )(Gallery));

@@ -1,1 +1,2 @@
-export const SET_SELECTED_IMG = "SET_SELECTED_IMG";
+export const ADD_IMG = "ADD_IMG";
+export const SET_IMG = "SET_IMG";

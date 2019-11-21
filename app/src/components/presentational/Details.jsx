@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from "react-redux";
-
-import { getSelectedImg } from '../../redux/selectors';
-
-import M from '../../messages/messages';
 
 class Details extends React.Component {
 
@@ -17,11 +13,10 @@ class Details extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log('content88: ', this.props.selectedImg);
     }
-
     render() {
-        const selectedImg = this.props.selectedImg
+        const { selectedImg } = this.props;
+
         return (
             <div className="detailsContainer">
                 <div className='imgTitle'>
@@ -38,10 +33,8 @@ class Details extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
-    const { selectedImg } = state.setSelectedImg;
-    return {selectedImg};
+    const { selectedImg } = state;
+    return { selectedImg };
 };
 
 export default withRouter(connect(mapStateToProps)(Details));
-
-// export default Details;

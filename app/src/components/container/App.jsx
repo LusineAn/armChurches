@@ -9,9 +9,7 @@ import AppNavbar from '../reactComponents/AppNavbar';
 import Details from '../presentational/Details';
 import HomePage from '../presentational/HomePage';
 import { Container } from 'react-bootstrap';
-
 import { getImages } from '../../data';
-import M from '../../messages/messages'
 
 class App extends React.Component {
 
@@ -33,7 +31,7 @@ class App extends React.Component {
                                 />
                             )}
                             <Route path="/details"
-                                render={(location) => <Details location={location} />}
+                                render={() => <Details />}
                             />
                         </Switch>
                     </Container>
