@@ -6,7 +6,7 @@
         color: burlywood;
     }
     .galleryDesc {
-        padding: 1rem 2rem 2rem;
+        padding: 1rem 2rem;
         text-align: justify;
     }
     .imgCardsContainer {
@@ -16,6 +16,6 @@
     }
     .imgCardsContainer::after {
         content: "";
-        flex: 1 1 30%;
+        flex: auto;
     }
 }

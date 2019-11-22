@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom'
-import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Details extends React.Component {
 
@@ -26,7 +26,7 @@ class Details extends React.Component {
                     <img src={selectedImg.src} />
                 </div>
             </div>
-        )
+        );
     }
 }
 const mapStateToProps = (state) => {

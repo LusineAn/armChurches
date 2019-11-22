@@ -30,6 +30,7 @@
     "@mdi/font": "^4.5.95",
     "@mdi/js": "^4.5.95",
     "@mdi/react": "^1.2.1",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "cli": "^1.0.1",
     "css-loader": "^3.2.0",

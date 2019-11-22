@@ -21,7 +21,7 @@ class AppNavbar extends React.Component {
                     </Container>
                 </Navbar.Collapse>
             </Navbar>
-        )
+        );
     }
 }
 

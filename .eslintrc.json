@@ -11,7 +11,7 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    // "parser": "esprima",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -23,10 +23,11 @@
         "react"
     ],
     "rules": {
+        "indent": ["error", 4],
         "semi": ["error", "always"],
-        // "quotemark": [true, "single"],
         "quotes": ["error", "single"],
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "no-trailing-spaces": ["error", { "skipBlankLines": false }],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "react/prop-types": 0
     }
 }

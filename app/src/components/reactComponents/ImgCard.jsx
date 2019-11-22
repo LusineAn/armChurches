@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
-import Icon from '@mdi/react'
+import Icon from '@mdi/react';
 import { mdiChevronDoubleRight } from '@mdi/js';
 
 import M from '../../messages/messages';
@@ -55,7 +55,7 @@ class ImgCard extends React.Component {
                     </Button>
                 </div>
             </div>
-        )
+        );
     }
 }
 

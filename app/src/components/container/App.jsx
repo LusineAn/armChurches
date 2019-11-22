@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { connect } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../assets/stylesheets/App.scss';
 
-import { setAllImages } from "../../redux/actions";
+import { setAllImages } from '../../redux/actions';
 import Routes from '../../routes/Routes';
 import AppNavbar from '../reactComponents/AppNavbar';
 import Details from '../presentational/Details';
@@ -29,7 +29,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log('allImages: ', this.props.allImages);
         return (
             <Router>
                 <div className="appContainer">
@@ -56,7 +55,7 @@ class App extends React.Component {
                     </Container>
                 </div>
             </Router>
-        )
+        );
     }
 }
 
@@ -66,6 +65,6 @@ const mapStateToProps = state => {
         allImages,
         favIds
     };
-}
+};
 
 export default connect(mapStateToProps, { setAllImages })(App);

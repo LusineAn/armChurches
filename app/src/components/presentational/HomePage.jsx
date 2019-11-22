@@ -20,7 +20,7 @@ class HomePage extends React.Component {
                     {M.footerMsg}
                 </div>
             </div>
-        )
+        );
     }
 }
 

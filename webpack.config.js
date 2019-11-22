@@ -17,12 +17,12 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                  loader: "babel-loader"
+                    loader: 'babel-loader'
                 }
             },
             {
-            test: /\.(s*)css$/,
-            use: ["style-loader", "css-loader", "sass-loader"]
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)$/,
@@ -39,4 +39,4 @@ module.exports = {
             template : 'app/index.html'
         })
     ],
-}
+};
