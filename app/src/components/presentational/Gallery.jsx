@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 
-import { setImg, addFavImg, removeFavImg } from "../../redux/actions";
+import { setGalleryType, setImg, addFavImg, removeFavImg } from "../../redux/actions";
 import ImgCard from '../reactComponents/ImgCard';
+import M from '../../messages/messages';
 
 class Gallery extends React.Component {
 
     static propTypes = {
+        type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         galleryDescription: PropTypes.string.isRequired,
         images: PropTypes.array.isRequired
@@ -21,6 +23,18 @@ class Gallery extends React.Component {
         }
     }
 
+
+ /**
+  * Functionality to get Gallery description related to Gallery type
+  */
+ onMoreClick = (img) => {
+    this.props.setImg(img);
+    this.setState({
+        isRedirect: true
+    });
+}
+
+/**
  /**
   * Functionality when user clicks on image card's more button
   */
@@ -36,7 +50,7 @@ class Gallery extends React.Component {
  */
     onFavoriteClick = (id) => {
         const isFav = this.props.favIds.includes(id);
-        return isFav ? this.props.removeFavImg(this.props.favIds.indexOf(id)) : this.props.addFavImg(id);
+        isFav ? this.props.removeFavImg(this.props.favIds.indexOf(id)) : this.props.addFavImg(id);
     }
 
 /**
@@ -47,19 +61,18 @@ class Gallery extends React.Component {
     }
 
     render() {
-        const { selectedImg } = this.props;
-
+        const { type, title, galleryDescription, images, selectedImg } = this.props;
         return this.state.isRedirect ?
             <Redirect to={`/details/${selectedImg.name}`} /> :
             <div className='galleryContainer'>
                 <div className='galleryTitle'>
-                    <span>{this.props.title}</span>
+                    <span>{title}</span>
                 </div>
                 <div className='galleryDesc'>
-                    <span>{this.props.galleryDescription}</span>
+                    <span>{ images.length === 0 ? M.noData : galleryDescription }</span>
                 </div>
                 <div className='imgCardsContainer'>
-                    {this.props.images.map(img =>
+                    {images.map(img =>
                         <ImgCard
                             key={img.id}
                             imgSrc={img.src}
@@ -75,15 +88,14 @@ class Gallery extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const { selectedImg } = state;
-    const { favIds } = state.favorits;
+    const { favIds, selectedImg } = state.data;
     return { 
-        selectedImg,
-        favIds
+        favIds,
+        selectedImg
     };
 }
 
 export default withRouter(connect(
     mapStateToProps,
-    { setImg, addFavImg, removeFavImg }
+    { setGalleryType, setImg, addFavImg, removeFavImg }
 )(Gallery));

@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import selectedImg from "./selectedImg";
-import favorits from "./favorits";
+import data from './data';
 
-export default combineReducers({ selectedImg, favorits });
+export default combineReducers({ data });

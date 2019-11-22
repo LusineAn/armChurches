@@ -11,9 +11,6 @@ class Details extends React.Component {
         imgPath: PropTypes.string
     }
 
-    constructor(props) {
-        super(props);
-    }
     render() {
         const { selectedImg } = this.props;
 
@@ -33,7 +30,7 @@ class Details extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
-    const { selectedImg } = state;
+    const { selectedImg } = state.data;
     return { selectedImg };
 };
 
