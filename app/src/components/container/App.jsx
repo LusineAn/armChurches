@@ -31,11 +31,11 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <div className="appContainer">
+                <div className='appContainer'>
                     <AppNavbar />
                     <Container className='homeContainer'>
                         <Switch>
-                            <Route exact path="/">
+                            <Route exact path='/'>
                                 <HomePage />
                             </Route>
                             {Routes.map((route, index) =>
@@ -48,7 +48,7 @@ class App extends React.Component {
                                     />}
                                 />
                             )}
-                            <Route path="/details"
+                            <Route path='/details'
                                 render={() => <Details />}
                             />
                         </Switch>
