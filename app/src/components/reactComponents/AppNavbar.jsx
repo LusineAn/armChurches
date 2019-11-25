@@ -14,10 +14,10 @@ class AppNavbar extends React.Component {
                     <Container>
                         <Nav className='mr-auto'>
                             <Nav.Link as={Link} to='/' >{M.nav.home}</Nav.Link>
-                            <Nav.Link as={Link} to='/gallery/monasteries' activeClassName='active'>{M.nav.monasteries}</Nav.Link>
-                            <Nav.Link as={Link} to='/gallery/history' activeClassName='active' >{M.nav.history}</Nav.Link>
-                            <Nav.Link as={Link} to='/gallery/nature' activeClassName='active' >{M.nav.nature}</Nav.Link>
-                            <Nav.Link as={Link} to='/gallery/favorites' activeClassName='active'>{M.nav.favorite}</Nav.Link>
+                            <Nav.Link as={Link} to='/gallery/monasteries'>{M.nav.monasteries}</Nav.Link>
+                            <Nav.Link as={Link} to='/gallery/history'>{M.nav.history}</Nav.Link>
+                            <Nav.Link as={Link} to='/gallery/nature'>{M.nav.nature}</Nav.Link>
+                            <Nav.Link as={Link} to='/gallery/favorites'>{M.nav.favorite}</Nav.Link>
                         </Nav>
                     </Container>
                 </Navbar.Collapse>
