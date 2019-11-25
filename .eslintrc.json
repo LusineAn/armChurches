@@ -2,16 +2,13 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -24,7 +21,10 @@
         "react"
     ],
     "rules": {
-        "indent": ["error", 4],
+        "indent": ["error", 4, {
+            "SwitchCase": 1,
+            "ignoreComments": true
+            }],
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
         "no-trailing-spaces": ["error", { "skipBlankLines": false }],
