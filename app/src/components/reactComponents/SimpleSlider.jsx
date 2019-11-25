@@ -34,9 +34,9 @@ class SimpleSlider extends React.Component {
                 {
                     this.state.images.map(imgName => {
                         return (
-                            <div className="carousel_item" key={imgName}>
+                            <div className='carousel_item' key={imgName}>
                                 <img
-                                    className="carousel_img"
+                                    className='carousel_img'
                                     src={this.imgPath + imgName}
                                 />
                             </div>

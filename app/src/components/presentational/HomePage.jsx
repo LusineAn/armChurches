@@ -6,7 +6,7 @@ import M from '../../messages/messages';
 class HomePage extends React.Component {
     render() {
         return (
-            <div className="homePage">
+            <div className='homePage'>
                 <div className='pageDescription'>
                     <div>
                         {M.homeDescription}
@@ -16,7 +16,7 @@ class HomePage extends React.Component {
                     </div>
                 </div>
                 <SimpleSlider />
-                <div className="footer">
+                <div className='footer'>
                     {M.footerMsg}
                 </div>
             </div>

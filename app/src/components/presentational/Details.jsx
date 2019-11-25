@@ -15,7 +15,7 @@ class Details extends React.Component {
         const { selectedImg } = this.props;
 
         return (
-            <div className="detailsContainer">
+            <div className='detailsContainer'>
                 <div className='imgTitle'>
                     <span>{selectedImg.name}</span>
                 </div>
