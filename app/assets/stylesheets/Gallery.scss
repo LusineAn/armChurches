@@ -7,12 +7,12 @@
     }
     .galleryDesc {
         padding: 1rem 2rem;
-        text-align: justify;
     }
     .imgCardsContainer {
         display: flex;
         flex-wrap: wrap;
         padding: 1rem;
+        justify-content: center;
     }
     .imgCardsContainer::after {
         content: "";

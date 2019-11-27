@@ -6,7 +6,7 @@ let routes = [
         path: '/gallery/monasteries',
         component: Gallery,
         props: {
-            title: 'Monasteries and Churches',
+            title: M.nav.monasteries,
             galleryDescription: M.monasteryDesc,
             type: 'monastery'
         }
@@ -15,7 +15,7 @@ let routes = [
         path: '/gallery/history',
         component: Gallery,
         props: {
-            title: 'History',
+            title: M.nav.history,
             galleryDescription: M.historyDesc,
             type: 'history'
         }
@@ -24,7 +24,7 @@ let routes = [
         path: '/gallery/nature',
         component: Gallery,
         props: {
-            title: 'Nature',
+            title: M.nav.nature,
             galleryDescription: M.natureDesc,
             type: 'nature'
         }
@@ -33,7 +33,7 @@ let routes = [
         path: '/gallery/favorites',
         component: Gallery,
         props: {
-            title: 'Favorite',
+            title: M.nav.favorite,
             galleryDescription: M.favoritesDesc,
             type: 'favorite'
         }
